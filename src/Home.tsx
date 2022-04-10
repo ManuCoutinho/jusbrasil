@@ -1,5 +1,12 @@
+import { FormComponent } from './components/Form'
+import { Container } from './components/Foundation/Container'
+
 const Home: React.FC = () => {
-  return <h1>🚀</h1>
+  return (
+    <Container>
+      <FormComponent />
+    </Container>
+  )
 }
 
 export default Home

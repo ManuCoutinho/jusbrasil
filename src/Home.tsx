@@ -1,11 +1,12 @@
 import { FormComponent } from './components/Form'
-import { Container } from './components/Foundation/Container'
+import { Header } from './components/Foundation/Header'
 
 const Home: React.FC = () => {
   return (
-    <Container>
+    <>
+      <Header>Módulo de Consulta Processual</Header>
       <FormComponent />
-    </Container>
+    </>
   )
 }
 

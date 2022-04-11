@@ -9,6 +9,15 @@ const Container = styled.main`
   align-items: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-`
+  flex-direction: column;
 
+  @media print and screen and (max-width: 30em) {
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    justify-content: center;
+    height: 100vh;
+  }
+`
 export { Container }

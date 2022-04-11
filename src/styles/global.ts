@@ -30,11 +30,11 @@ html {
    font-size: 93.75%;
  }
 
- @media (max-width: 45em){
+ @media (max-width: 36em){
    font-size: 87.5%;
  }
   
- @media (max-width: 27em) {
+ @media (max-width: 30em) {
   html {
     font-size: 80%;
   }
@@ -51,18 +51,18 @@ body, html {
 body {
  background: var(--gray-10);
  color: var(--gray-900);
- line-height: 1.5rem; 
+ line-height: 1.75rem; 
  transition: all 0.2s ease-in-out;
 }
 
 body, input, textarea,select, button {
- font-family: Arial, Helvetica, 'Ubuntu', sans-serif; 
+ font-family: 'Poppins', Arial, Helvetica, 'Ubuntu', sans-serif; 
  font-weight: 400;
  font-size: 16px;
 }
 
 h1, h2, h3, h4, h5, h6, strong {
- font-weight: 800; 
+ font-weight: 700; 
 }
 
 button{

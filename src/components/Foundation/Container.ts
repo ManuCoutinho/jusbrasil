@@ -12,12 +12,12 @@ const Container = styled.main`
   flex-direction: column;
 
   @media print and screen and (max-width: 30em) {
+    width: 100%;
     display: flex;
     align-items: center;
     -webkit-align-items: center;
     -ms-flex-align: center;
     justify-content: center;
-    height: 100vh;
   }
 `
 export { Container }

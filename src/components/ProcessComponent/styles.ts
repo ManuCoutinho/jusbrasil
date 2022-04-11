@@ -75,10 +75,12 @@ const BoxMov = styled.table`
   margin-top: 1rem;
   border-spacing: 0 0.5rem;
   text-align: left;
+
   tbody {
     font-size: 0.9rem;
     td {
       border-bottom: 1px solid var(--yellow);
+      padding: 0 0.25rem;
     }
     tr {
       padding: 0.5rem;
@@ -86,6 +88,9 @@ const BoxMov = styled.table`
         background: rgba(0, 0, 0, 0.1);
       }
     }
+  }
+  @media only screen and (max-width: 26.5em) {
+    font-size: 0.8rem;
   }
 `
 const CaptionMov = styled(Subtitle)`

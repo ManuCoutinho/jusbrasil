@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 import { Container } from '../Foundation/Container'
+import { ToastError, ToastNotFound } from '../Foundation/Toast'
 import { ProcessComponent } from '../ProcessComponent'
 import { api } from '../services/api'
+
+import 'react-toastify/dist/ReactToastify.min.css'
 
 import {
   BoxInput,
@@ -41,22 +44,28 @@ interface IInfoProps {
 export function FormComponent() {
   const { register, handleSubmit, formState, reset } = useForm<InputData>()
   const [response, setResponse] = useState<Array<IInfoProps>>([])
+  const [status, setStatus] = useState(0)
   const { errors } = formState
 
   async function getInfo(process: string): Promise<IInfoProps> {
-    const { data } = await api.get(`tribproc/${process}`, {
+    const { data, status } = await api.get(`tribproc/${process}`, {
       params: {
         tipo_numero: '8',
       },
     })
     setResponse(data)
+    setStatus(status)
     return data
   }
-
   const onSubmit: SubmitHandler<InputData> = async (data) => {
     getInfo(data.process)
     reset()
   }
+
+  useEffect(() => {
+    status !== 200 ? ToastError() : null
+    Object.keys(response).length === 1 ? ToastNotFound() : null
+  }, [response])
 
   return (
     <Container>
@@ -84,7 +93,8 @@ export function FormComponent() {
           </SubmitButton>
         )}
       </Form>
-      {response.length !== 0 && <ProcessComponent data={response} />}
+
+      {Object.keys(response).length > 1 && <ProcessComponent data={response} />}
     </Container>
   )
 }

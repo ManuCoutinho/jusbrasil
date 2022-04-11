@@ -10,6 +10,7 @@ const Form = styled.form`
   display: flex;
   justify-content: space-evenly;
   vertical-align: middle;
+  margin-bottom: 1.5rem;
 
   @media only screen and (max-width: 36em) {
     height: 10rem;

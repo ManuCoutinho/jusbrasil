@@ -11,30 +11,28 @@ import {
   Title,
 } from './styles'
 
-type DataProps = {
-  numero: string
-  numero_alternativo: string
-  foro: string
-  comarca_cnj: string
-  uf: string
-  vara: string
-  area: string
-  assunto: string
-  natureza: string
-  alteradoEm: string
-  distribuicaoData: string
-  partes: Array<{}>
-  tribunal: string
-  classeNatureza: string
-  comarca: string
-  valor: number
-  movs: Array<{}>
-  instancia: number
-}
 interface IDataProps {
-  data: Array<DataProps>
+  data: {
+    numero: string
+    numero_alternativo: string
+    foro: string
+    comarca_cnj: string
+    uf: string
+    vara: string
+    area: string
+    assunto: string
+    natureza: string
+    alteradoEm: string
+    distribuicaoData: string
+    partes: Array<{}>
+    tribunal: string
+    classeNatureza: string
+    comarca: string
+    valor: number
+    movs: Array<{}>
+    instancia: number
+  }
 }
-
 export function ProcessComponent({ data }: IDataProps): JSX.Element {
   const dataAtualizacao = new Date(data.alteradoEm).toLocaleDateString(
     'pt-BR',
@@ -51,22 +49,17 @@ export function ProcessComponent({ data }: IDataProps): JSX.Element {
     currency: 'BRL',
   }).format(data.valor)
 
-  const partes = data.partes?.map((element) => {
-    const [, , nome, , , , , , , , , , , , , , ,] = element
-    return nome
-  })
-  const tipos = data.partes?.map((element) => {
-    const [, , , , , , , , tipo, , , , , , , , ,] = element
-    return tipo
-  })
-  const advogados = data.partes?.map((element) => {
-    const [, , , , , , , , , adv, , , , , , , ,] = element
-    return adv.map((advs: string) => advs[1])
-  })
-  const oabs = data.partes?.map((element) => {
-    const [, , , , , , , , , adv, , , , , , , ,] = element
-    return adv.map((oab: string) => oab[2])
-  })
+  const partes = [...data.partes].map((parte: any) => parte[2])
+
+  const advogados = [...data.partes]
+    .flatMap((adv: any) => adv[9])
+    .map((name) => name[1])
+
+  const oabs = [...data.partes]
+    .flatMap((adv: any) => adv[9])
+    .map((name) => name[2])
+
+  const tiposPartes = [...data.partes].map((parte: any) => parte[8])
 
   return (
     <Container>
@@ -78,7 +71,7 @@ export function ProcessComponent({ data }: IDataProps): JSX.Element {
         <time>Atualizado em: {dataAtualizacao}</time>
       </HeaderContent>
       <BoxInfo>
-        <p>{data.vara}ª </p>
+        <p>{data.vara} </p>
         <p>{data.foro}</p>
       </BoxInfo>
       <ProcessDetails>
@@ -107,7 +100,7 @@ export function ProcessComponent({ data }: IDataProps): JSX.Element {
       </ProcessDetails>
       <ContainerParts>
         <BoxParts>
-          {tipos?.map((tipo) => (
+          {tiposPartes?.map((tipo: string) => (
             <Subtitle>{tipo}</Subtitle>
           ))}
         </BoxParts>
@@ -120,16 +113,15 @@ export function ProcessComponent({ data }: IDataProps): JSX.Element {
           ))}
         </BoxParts>
         <BoxParts>
-          {advogados?.map((adv) => (
+          {advogados?.map((adv: string) => (
             <BoxInfo key={Math.random()}>
               <p>{adv}</p>
             </BoxInfo>
           ))}
         </BoxParts>
         <BoxParts>
-          {oabs?.map((oab) => (
+          {oabs?.map((oab: string) => (
             <BoxInfo>
-              {' '}
               <p key={Math.random()}>OAB: {oab}</p>
             </BoxInfo>
           ))}
@@ -147,9 +139,9 @@ export function ProcessComponent({ data }: IDataProps): JSX.Element {
           </tr>
         </thead>
         <tbody>
-          {data.movs?.map((element) => {
+          {data.movs?.map((element: any) => {
             return (
-              <tr>
+              <tr key={Math.random()}>
                 <td key={Math.random()}>
                   {new Date(element[0]).toLocaleDateString('pt-BR')}{' '}
                 </td>

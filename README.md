@@ -1,96 +1,77 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Jusbrasil" />
-
-&#xa0;
-
-  <!-- <a href="https://jusbrasil.netlify.app">Demo</a> -->
-</div>
-
 <h1 align="center">Jusbrasil</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/jusbrasil?color=56BEB8">
-
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/jusbrasil?color=56BEB8">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/jusbrasil?color=56BEB8">
-
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/jusbrasil?color=56BEB8">
-
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/jusbrasil?color=56BEB8" /> -->
-
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/jusbrasil?color=56BEB8" /> -->
-
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/jusbrasil?color=56BEB8" /> -->
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/manucoutinho/jusbrasil?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/manucoutinho/jusbrasil?color=56BEB8">
 </p>
-
-<!-- Status -->
-
- <h4 align="center"> 
-	🚧  Jusbrasil 🚀 Under construction...  🚧
-</h4>
 
 <hr>
 
 <p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
+  <a href="#dart-about">Sobre</a> &#xa0; | &#xa0; 
   <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
+  <a href="#rocket-technologies">Tecnologias</a> &#xa0; | &#xa0;
+  <a href="#white_check_mark-requirements">Requisitos</a> &#xa0; | &#xa0;
+  <a href="#checkered_flag-starting">Ponto de partida</a> &#xa0; | &#xa0;
+  <a href="#memo-license">Licença</a> &#xa0; | &#xa0;
+  <a href="https://github.com/manucoutinho" target="_blank">Autora</a>
 </p>
 
 <br>
 
-## :dart: About
+## :dart: Sobre
 
-Describe your project
+O projeto consiste numa tela de busca processual, na qual o usuário digita o número que dejesa buscar para ter acesso a todas as informações disponíveis na API do Jusbrasil.
+
+As informações são rendererizadas em tela, logo após o retorno da chamada ao endpoint.
+
+Caso não haja retorno da API ou o número buscado não seja localizado na base de dados, será rendereizada mensagem dando feedback visual ao usuário.
 
 ## :sparkles: Features
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Design clean\
+:heavy_check_mark: Layout responsivo\
+:heavy_check_mark: Integração com API externa
 
-## :rocket: Technologies
+## :rocket: Tecnologias
 
-The following tools were used in this project:
+Aqui estão as ferramentas utilizadas neste projeto:
 
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Vitejs](https://vitejs.dev/)
+- [Styled Components](https://styled-components.com/)
+- [Axios](https://axios-http.com/ptbr/docs/intro)
+- [React-Hook-Form](https://react-hook-form.com/)
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction/)
 
-## :white_check_mark: Requirements
+## :white_check_mark: Requisitos
 
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
+Antes do Ponto de partida :checkered_flag:, para rodar a aplicação, você precisará do [Git](https://git-scm.com) e do [Node](https://nodejs.org/en/) instalados na sua máquina.
 
-## :checkered_flag: Starting
+## :checkered_flag: Iniciando
 
 ```bash
-# Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/jusbrasil
+# Para clonar este projeto:
+$ git clone https://github.com/manucoutinho/jusbrasil
 
-# Access
+# Alterne para pasta:
 $ cd jusbrasil
 
-# Install dependencies
+# Instale as dependências:
 $ yarn
 
-# Run the project
-$ yarn start
+# Rode o projeto
+$ yarn dev
 
-# The server will initialize in the <http://localhost:3000>
+# O servidor de desenvolvimento será inicializado na porta: <http://localhost:3000>
 ```
 
-## :memo: License
+## :memo: Licença
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE) file.
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+Made by <a href="https://github.com/manucoutinho" target="_blank">Manu Coutinho</a>
 
 &#xa0;
 

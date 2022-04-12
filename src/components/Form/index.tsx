@@ -19,7 +19,7 @@ import {
 type InputData = {
   process: string
 }
-interface IInfoProps {
+type IInfoProps = {
   numero: string
   numero_alternativo: string
   foro: string
@@ -35,12 +35,10 @@ interface IInfoProps {
   tribunal: string
   classeNatureza: string
   comarca: string
-  valor?: number
+  valor: number
   movs: Array<{}>
-  status_op?: string
   instancia: number
 }
-
 export function FormComponent() {
   const { register, handleSubmit, formState, reset } = useForm<InputData>()
   const [response, setResponse] = useState<Array<IInfoProps>>([])
